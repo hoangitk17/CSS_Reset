@@ -357,6 +357,7 @@ template {
 
 /**
  * Remove the blue highlight on mobile
+ * https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
  */
 input,
 textarea,
@@ -364,4 +365,81 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* 
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+} */
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {
+  list-style: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+  cursor: pointer;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+button,
+input[type="button"] {
+  width: auto;
+  overflow: visible;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
 }
